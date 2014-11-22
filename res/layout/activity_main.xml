@@ -123,12 +123,13 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:includeFontPadding="true"
+            android:onClick="onRadioClicked"
             android:scrollHorizontally="true"
-            android:textStyle="bold"
-            android:textColor="#470f52"
             android:selectAllOnFocus="true"
             android:text="@string/male_text_RB"
-            android:onClick="onRadioClicked" />
+            android:textColor="#470f52"
+            android:textStyle="bold" />
+
     </RadioGroup>
 
 </RelativeLayout>

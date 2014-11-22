@@ -8,11 +8,22 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
+        android:name="MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <receiver android:name="UserChoiceReceiver" >
+            <intent-filter>
+                <action android:name="com.example.rockpaperscissor.BTMSG_INTENT" >
+                </action>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".LogIn"
             android:label="@string/app_name" >
@@ -21,6 +32,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SingleMultiChoiceActivity"
+            android:label="Single or Multi User" >
         </activity>
         <activity
             android:name=".PlayerChoice"
@@ -35,9 +50,17 @@
             android:label="Game Result" >
         </activity>
         <activity
-            android:name=".PlayerStatestics"
+            android:name=".PlayerStatistics"
             android:label="Player Statistics" >
         </activity>
+        <activity
+            android:name=".DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Select your friend&apos;s device"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".BluetoothChat"
+            android:label="Pick your friend" />
     </application>
 
 </manifest>
