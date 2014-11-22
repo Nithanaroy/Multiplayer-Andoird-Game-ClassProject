@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".SingleMultiChoiceActivity"
+            android:label="Single or Multi User" >
+        </activity>
+        <activity
             android:name=".PlayerChoice"
             android:label="Player Choice" >
         </activity>
