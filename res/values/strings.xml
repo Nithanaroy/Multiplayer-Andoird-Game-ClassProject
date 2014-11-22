@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RockPaperScissor</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcomeTextS1">Welcome! Login to play!!</string>
+    <string name="nameTextScreen1">Name</string>
+    <string name="nameBoxS1"></string>
+    <string name="ageTextS1">Age</string>
+    <string name="ageBoxS1"></string>
+    <string name="sexTextS1">Sex</string>
+    <string name="male_text_RB">Male</string>
+    <string name="female_text_RB">Female</string>
+    <string name="startButtonS1">Let the game begin!</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="player_msg">Player:1 - Please press the speak button and call out your choice (Rock, Paper or Scissors)</string>
+    <string name="player1_msg1">Player - 1</string>
+    <string name="playermsg2">Call out your choice</string>
+    <string name="choiceTxt">Rock - Paper - or - Scissors ?</string>
+    <string name="choicetext">Rock-Paper-or-Scissors?</string>
+    <string name="clickButtonText">Click the Speak Button!</string>
+    <string name="title_activity_third">ThirdActivity</string>
+    <string name="player1msg1_S3">Player - 1</string>
+    <string name="player1TextMsg2">Thank you for the selection</string>
+    <string name="player1TextMsg3">Your choice recorded as:</string>
+    <string name="p1ChoiceText"></string>
+    <string name="clickHereS3">Click Here!</string>
+    <string name="title_activity_fourth">FourthActivity</string>
+    <string name="cpu_selected_text">Computer Selected:</string>
+    <string name="cpu_selection_string"></string>
+    <string name="winner_text">The Winner Is:</string>
+    <string name="winner_name"></string>
+    <string name="recordButton">Click to see your records!</string>
+    <string name="title_activity_fifth">FifthActivity</string>
+    <string name="findNameText">User Name:</string>
+    <string name="findNameAns"></string>
+    <string name="win_text">WINS</string>
+    <string name="win_answer"></string>
+    <string name="loss_text">LOSSES</string>
+    <string name="loss_ans"></string>
+    <string name="p1_selectionText">Player 1 Selected:</string>
+    <string name="p1selectAns"></string>
+    <string name="p1_select_text_ans"></string>
+    <string name="playagain">Play Again!</string>
+    <string name="exit_game">Exit Game :(</string>
+    <string name="name_last">Name</string>
+    <string name="user_name_ans"></string>
+    <string name="win">Win</string>
+    <string name="win_ans"></string>
+    <string name="loss">Loss</string>
+    <string name="loss_nas"></string>
+    <string name="pagain">Play Again :)</string>
+    <string name="exit">Exit Game :(</string>
+
+</resources>

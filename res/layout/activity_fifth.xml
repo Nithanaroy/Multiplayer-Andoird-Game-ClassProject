@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@layout/background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rockpaperscissor.PlayerStatestics" >
+
+    <TextView
+        android:id="@+id/user_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="26dp"
+        android:textStyle="bold"
+        android:textColor="#470f52"
+        android:text="@string/name_last"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/user_name_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/user_Name"
+        android:layout_marginLeft="54dp"
+        android:layout_toRightOf="@+id/user_Name"
+        android:textStyle="bold"
+        android:textColor="#470f52"
+        android:text="@string/user_name_ans"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/win_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/user_Name"
+        android:layout_below="@+id/user_name_answer"
+        android:textStyle="bold"
+        android:textColor="#470f52"
+        android:layout_marginTop="56dp"
+        android:text="@string/win"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/wins_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/win_text"
+        android:layout_alignBottom="@+id/win_text"
+        android:textStyle="bold"
+        android:textColor="#470f52"
+        android:layout_alignLeft="@+id/user_name_answer"
+        android:text="@string/win_ans"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/loss_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/win_text"
+        android:textStyle="bold"
+        android:textColor="#470f52"
+        android:layout_below="@+id/wins_answer"
+        android:layout_marginTop="54dp"
+        android:text="@string/loss"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/loss_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/loss_text"
+        android:layout_alignBottom="@+id/loss_text"
+        android:textStyle="bold"
+        android:textColor="#470f52"
+        android:layout_alignLeft="@+id/wins_answer"
+        android:text="@string/loss_nas"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/play_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exit_game"
+        android:layout_alignLeft="@+id/exit_game"
+        android:layout_marginBottom="20dp"
+        android:onClick="playAgain"
+        android:text="@string/pagain"
+        android:textColor="#470f52"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/exit_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:onClick="exitGame"
+        android:text="@string/exit"
+        android:textColor="#470f52"
+        android:textStyle="bold" />
+
+</RelativeLayout>

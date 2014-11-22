@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@layout/background"
+    tools:context="com.example.rockpaperscissor.LogIn" >
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/welcomeTextS1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold|italic"
+        android:textSize="24sp"
+        android:textColor="#470f52" />
+
+    <TextView
+        android:id="@+id/name_Text_S1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/welcome_text"
+        android:layout_below="@+id/welcome_text"
+        android:layout_marginTop="62dp"
+        android:text="@string/nameTextScreen1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#470f52" />
+
+    <EditText
+        android:id="@+id/name_Box_S1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/name_Text_S1"
+        android:layout_alignBottom="@+id/name_Text_S1"
+        android:layout_marginLeft="44dp"
+        android:layout_toRightOf="@+id/name_Text_S1"
+        android:ems="10"
+        android:text="@string/nameBoxS1"
+        android:textColor="#470f52" >
+
+        <requestFocus android:layout_width="match_parent" />
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/age_Text_S1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name_Text_S1"
+        android:layout_below="@+id/name_Box_S1"
+        android:layout_marginTop="41dp"
+        android:textStyle="bold"
+        android:text="@string/ageTextS1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="24sp"
+        android:textColor="#470f52" />
+
+    <EditText
+        android:id="@+id/age_Box_S1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name_Box_S1"
+        android:layout_alignTop="@+id/age_Text_S1"
+        android:ems="10"
+        android:text="@string/ageBoxS1"
+        android:textColor="#470f52" />
+
+    <TextView
+        android:id="@+id/sex_Text_S1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/age_Text_S1"
+        android:layout_below="@+id/age_Box_S1"
+        android:layout_marginTop="41dp"
+        android:textStyle="bold"
+        android:text="@string/sexTextS1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="24sp"
+        android:textColor="#470f52" />
+    
+    <Button
+        android:id="@+id/start_Button_S1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:onClick="startGamePlay"
+        android:textStyle="bold|italic"
+        android:textColor="#470f52"
+        android:text="@string/startButtonS1" />
+
+    <RadioGroup
+        android:id="@+id/radioSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/age_Box_S1"
+        android:layout_alignTop="@+id/sex_Text_S1" >
+
+        <RadioButton
+            android:id="@+id/RB_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/RB_male"
+            android:layout_below="@+id/RB_male"
+            android:text="@string/female_text_RB"
+            android:textStyle="bold"
+            android:textColor="#470f52"
+            android:onClick="onRadioClicked" />
+
+        <RadioButton
+            android:id="@+id/RB_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:includeFontPadding="true"
+            android:scrollHorizontally="true"
+            android:textStyle="bold"
+            android:textColor="#470f52"
+            android:selectAllOnFocus="true"
+            android:text="@string/male_text_RB"
+            android:onClick="onRadioClicked" />
+    </RadioGroup>
+
+</RelativeLayout>

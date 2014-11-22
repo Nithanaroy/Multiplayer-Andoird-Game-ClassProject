@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@layout/background"
+    tools:context="com.example.rockpaperscissor.PlayerChoice" >
+
+    <TextView
+        android:id="@+id/playerMsg1Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/player1_msg1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#470f52" />
+
+    <ImageButton
+        android:id="@+id/speakButtonS2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="66dp"
+        android:onClick="player1SpeakInput"
+        android:src="@drawable/speakbutton" />
+
+    <TextView
+        android:id="@+id/p1Text1S3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/speakButtonS2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:text="@string/choicetext"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#470f52" />
+
+    <TextView
+        android:id="@+id/playerMsg2Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/p1Text1S3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="61dp"
+        android:text="@string/playermsg2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#470f52" />
+
+    <TextView
+        android:id="@+id/clickSpeakBtnText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playerMsg1Txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="@string/clickButtonText"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#470f52" />
+
+</RelativeLayout>
