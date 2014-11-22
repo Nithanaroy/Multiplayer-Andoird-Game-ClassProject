@@ -7,8 +7,11 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
+        android:name="AppVariables"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -42,6 +45,14 @@
             android:name=".PlayerStatestics"
             android:label="Player Statistics" >
         </activity>
+        
+        <activity android:name=".DeviceListActivity"
+                  android:label="Select your friend's device"
+                  android:theme="@android:style/Theme.Dialog"
+                  android:configChanges="orientation|keyboardHidden" />
+        
+        <activity android:name=".BluetoothChat"
+                  android:label="Finding your friend..."/>
     </application>
 
 </manifest>

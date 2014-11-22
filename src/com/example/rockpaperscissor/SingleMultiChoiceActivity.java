@@ -19,6 +19,7 @@ public class SingleMultiChoiceActivity extends ActionBarActivity {
 	public void startSingleGamePlay(View v) {
 		try {
 			Log.d(TAG, "Single Player");
+			AppVariables.isSinglePlayer = true;
 			Intent i = new Intent (SingleMultiChoiceActivity.this, PlayerChoice.class);
 	    	startActivity(i);
 		} catch (Exception e) {
@@ -29,7 +30,8 @@ public class SingleMultiChoiceActivity extends ActionBarActivity {
 	public void startMultiGamePlay(View v) {
 		try {
 			Log.d(TAG, "Multi Player");
-			Intent i = new Intent (SingleMultiChoiceActivity.this, PlayerChoice.class);
+			AppVariables.isSinglePlayer = false;
+			Intent i = new Intent (SingleMultiChoiceActivity.this, BluetoothChat.class);
 	    	startActivity(i);
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage());
