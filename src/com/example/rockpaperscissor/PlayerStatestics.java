@@ -15,38 +15,41 @@ public class PlayerStatestics extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_fifth);
 		
-		try
-		{
+		AppVariables.clearAll();
+
+		try {
 			DBhandler dbh = new DBhandler(this, null, null, 1);
 			dbh.findUser(dbh.u_name);
 			dbh.winloss();
-			
-			
-			TextView uname = (TextView)findViewById(R.id.user_name_answer);
-			TextView uwin = (TextView)findViewById(R.id.wins_answer);
-			TextView uloss = (TextView)findViewById(R.id.loss_answer);
-			
+
+
+			TextView uname = (TextView) findViewById(R.id.user_name_answer);
+			TextView uwin = (TextView) findViewById(R.id.wins_answer);
+			TextView uloss = (TextView) findViewById(R.id.loss_answer);
+
 			uname.setText(dbh.u_name.toString());
-			uwin.setText(dbh.u_win+"");
-			uloss.setText(dbh.u_loss+"");
-			
+			uwin.setText(dbh.u_win + "");
+			uloss.setText(dbh.u_loss + "");
+
 			dbh.onUpdate(dbh.u_id);
 			dbh.close();
-		}catch(Exception e)
-		{
-			
+		} catch (Exception e) {
+
 		}
 	}
 
 	public void playAgain(View v) {
-		Intent i = new Intent(PlayerStatestics.this, PlayerChoice.class);
+		Intent i = new Intent(PlayerStatestics.this, SingleMultiChoiceActivity.class);
 		startActivity(i);
 	}
-	
+
 	public void exitGame(View v) {
-		finish();          
-        moveTaskToBack(true);
+		finish();
+		moveTaskToBack(true);
+		
+		// TODO: Close bluetooth connection
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

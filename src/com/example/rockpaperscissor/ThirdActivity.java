@@ -13,20 +13,20 @@ import android.widget.TextView;
 public class ThirdActivity extends ActionBarActivity {
 
 	static String playerChoiceS3 = "";
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_third);
-		
-		TextView choice = (TextView)findViewById(R.id.p1_choice_text);
+
+		TextView choice = (TextView) findViewById(R.id.p1_choice_text);
 		choice.setText(SecondActivity.player1Choice.toString());
 		playerChoiceS3 = SecondActivity.player1Choice.toString();
-		
 	}
-	
+
+
 	public void goToFourthActivity(View v) {
-		
+
 		Intent i = new Intent(ThirdActivity.this, FourthActivity.class);
 		startActivity(i);
 	}

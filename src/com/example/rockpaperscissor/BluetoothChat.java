@@ -205,7 +205,11 @@ public class BluetoothChat extends Activity {
 				byte[] readBuf = (byte[]) msg.obj;
 				// construct a string from the valid bytes in the buffer
 				String readMessage = new String(readBuf, 0, msg.arg1);
-				// mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
+				AppVariables.inComingMessage = readMessage;
+				// send a broadcast that a message has been received
+				Intent intent = new Intent();
+				intent.setAction("com.example.rockpaperscissor.BTMSG_INTENT");
+				sendBroadcast(intent);
 				break;
 			case MESSAGE_DEVICE_NAME:
 				// save the connected device's name

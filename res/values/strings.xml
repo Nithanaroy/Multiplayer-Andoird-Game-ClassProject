@@ -30,6 +30,7 @@
     <string name="clickHereS3">Click Here!</string>
     <string name="title_activity_fourth">FourthActivity</string>
     <string name="cpu_selected_text">Computer Selected:</string>
+    <string name="friend_selected_text">Your friend Selected:</string>
     <string name="cpu_selection_string"></string>
     <string name="winner_text">The Winner Is:</string>
     <string name="winner_name"></string>
@@ -41,7 +42,7 @@
     <string name="win_answer"></string>
     <string name="loss_text">LOSSES</string>
     <string name="loss_ans"></string>
-    <string name="p1_selectionText">Player 1 Selected:</string>
+    <string name="p1_selectionText">You Selected:</string>
     <string name="p1selectAns"></string>
     <string name="p1_select_text_ans"></string>
     <string name="playagain">Play Again!</string>

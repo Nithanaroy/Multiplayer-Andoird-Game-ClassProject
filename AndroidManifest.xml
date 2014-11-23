@@ -7,8 +7,9 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:name="AppVariables"
@@ -16,6 +17,13 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <receiver android:name="UserChoiceReceiver" >
+            <intent-filter>
+                <action android:name="com.example.rockpaperscissor.BTMSG_INTENT" >
+                </action>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".LogIn"
             android:label="@string/app_name" >
@@ -45,14 +53,14 @@
             android:name=".PlayerStatestics"
             android:label="Player Statistics" >
         </activity>
-        
-        <activity android:name=".DeviceListActivity"
-                  android:label="Select your friend's device"
-                  android:theme="@android:style/Theme.Dialog"
-                  android:configChanges="orientation|keyboardHidden" />
-        
-        <activity android:name=".BluetoothChat"
-                  android:label="Finding your friend..."/>
+        <activity
+            android:name=".DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Select your friend&apos;s device"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name=".BluetoothChat"
+            android:label="Finding your friend..." />
     </application>
 
 </manifest>
