@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@layout/background"
-    android:gravity="center_vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -16,11 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/comp_selected"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:text="@string/cpu_selection_string"
         android:textColor="#470f52"
-        android:textStyle="bold"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/winnerName_Text"
@@ -31,8 +30,8 @@
         android:layout_marginTop="45dp"
         android:text="@string/winner_name"
         android:textColor="#470f52"
-        android:textStyle="bold"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/comp_selected"
@@ -42,10 +41,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/cpu_selected_text"
-        android:textStyle="bold"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#470f52"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/playerSelectTextView"
@@ -53,11 +52,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/cpu_selection_text"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
         android:layout_marginTop="35dp"
         android:text="@string/p1_selectionText"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#470f52" />
+        android:textColor="#470f52"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/winnerText"
@@ -78,7 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/playerSelectTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="@string/p1_select_text_ans"
         android:textColor="#470f52"
         android:textSize="24sp"
@@ -86,10 +85,12 @@
 
     <Button
         android:id="@+id/record_Button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/winnerName_Text"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="40dp"
         android:onClick="nextActivity"
         android:text="@string/recordButton"
         android:textColor="#470f52"
