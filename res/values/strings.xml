@@ -7,10 +7,8 @@
     <string name="welcomeTextS1">Welcome! Login to play!!</string>
     <string name="nameTextScreen1">Name</string>
     <string name="nameBoxS1">Nitin</string>
-    
     <string name="ageTextS1">Age</string>
     <string name="ageBoxS1">20</string>
-    
     <string name="sexTextS1">Sex</string>
     <string name="male_text_RB">Male</string>
     <string name="female_text_RB">Female</string>
@@ -27,7 +25,8 @@
     <string name="player1TextMsg2">Thank you for the selection</string>
     <string name="player1TextMsg3">Your choice recorded as:</string>
     <string name="p1ChoiceText"></string>
-    <string name="clickHereS3">Click Here!</string>
+    <string name="clickHereS3">Confirm!</string>
+    <string name="tryAgain">Try again</string>
     <string name="title_activity_fourth">FourthActivity</string>
     <string name="cpu_selected_text">Computer Selected:</string>
     <string name="friend_selected_text">Your friend Selected:</string>
@@ -46,30 +45,29 @@
     <string name="p1selectAns"></string>
     <string name="p1_select_text_ans"></string>
     <string name="playagain">Play Again!</string>
-    <string name="exit_game">Exit Game :(</string>
+    <string name="startnewgame">Start a new game</string>
+    <string name="exit_game">Exit Game</string>
     <string name="name_last">Name</string>
     <string name="user_name_ans"></string>
     <string name="win">Win</string>
     <string name="win_ans"></string>
     <string name="loss">Loss</string>
     <string name="loss_nas"></string>
-    <string name="pagain">Play Again :)</string>
-    <string name="exit">Exit Game :(</string>
-    
+    <string name="pagain">Play Again</string>
+    <string name="exit">Exit Game</string>
     <string name="single_multi_heading">Make your choice:</string>
     <string name="single_player_btn">Play with computer</string>
-    <string name="multi_player_btn">Play with your friend</string>
-    
-    
-    <!--  BluetoothChat -->
+    <string name="multi_player_btn">Play using Bluetooth (your friend)</string>
+
+    <!-- BluetoothChat -->
     <string name="send">Send</string>
     <string name="not_connected">You are not connected to a device</string>
-    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving the game.</string>
     <string name="title_connecting">connecting...</string>
     <string name="title_connected_to">connected: </string>
     <string name="title_not_connected">not connected</string>
 
-    <!--  DeviceListActivity -->
+    <!-- DeviceListActivity -->
     <string name="scanning">scanning for devices...</string>
     <string name="select_device">select a device to connect</string>
     <string name="none_paired">No devices have been paired</string>

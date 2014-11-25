@@ -62,15 +62,27 @@
         android:textColor="#470f52" />
 
     <Button
-        android:id="@+id/clickHereButton"
-        android:layout_width="match_parent"
+        android:id="@+id/tryAgainButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"
-        android:text="@string/clickHereS3"
-        android:textStyle="bold|italic"
+        android:layout_alignBaseline="@+id/clickHereButton"
+        android:layout_alignBottom="@+id/clickHereButton"
+        android:layout_toLeftOf="@+id/p1Text1S3"
+        android:onClick="goToSecondActivity"
+        android:text="@string/tryAgain"
         android:textColor="#470f52"
-        android:onClick="goToFourthActivity" />
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/clickHereButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/p1_choice_text"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/p1Text1S3"
+        android:onClick="goToFourthActivity"
+        android:text="@string/clickHereS3"
+        android:textColor="#470f52"
+        android:textStyle="bold|italic" />
 
 </RelativeLayout>

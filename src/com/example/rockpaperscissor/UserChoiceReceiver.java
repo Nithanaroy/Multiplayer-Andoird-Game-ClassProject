@@ -9,8 +9,8 @@ public class UserChoiceReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 
-		if (AppVariables.gameResult != null) {
-			AppVariables.gameResult.decideMultiPlayerWinner();
+		if (MyApplication.gameResult != null) {
+			MyApplication.gameResult.decideMultiPlayerWinner();
 		}
 
 	}

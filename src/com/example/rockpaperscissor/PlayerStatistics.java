@@ -7,15 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class PlayerStatestics extends ActionBarActivity {
+public class PlayerStatistics extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_fifth);
-		
-		AppVariables.clearAll();
+
+		MyApplication.clearAll(false);
 
 		try {
 			DBhandler dbh = new DBhandler(this, null, null, 1);
@@ -39,15 +40,26 @@ public class PlayerStatestics extends ActionBarActivity {
 	}
 
 	public void playAgain(View v) {
-		Intent i = new Intent(PlayerStatestics.this, SingleMultiChoiceActivity.class);
+		if (MyApplication.mChatService != null && MyApplication.mChatService.getState() == MyApplication.mChatService.STATE_CONNECTED) {
+			MyApplication.isSinglePlayer = false; // as we are playing again with the same opponent
+			Intent i = new Intent(PlayerStatistics.this, PlayerChoice.class);
+			startActivity(i);
+		} else {
+			Toast.makeText(this, "Connection with opponent lost", Toast.LENGTH_LONG).show();
+			startNewGame(v);
+		}
+
+	}
+
+	public void startNewGame(View v) {
+		Intent i = new Intent(PlayerStatistics.this, SingleMultiChoiceActivity.class);
 		startActivity(i);
 	}
 
 	public void exitGame(View v) {
+		MyApplication.clearAll(true);
 		finish();
 		moveTaskToBack(true);
-		
-		// TODO: Close bluetooth connection
 	}
 
 	@Override

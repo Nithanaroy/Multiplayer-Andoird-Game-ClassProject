@@ -26,6 +26,7 @@ public class BluetoothChat extends Activity {
 	public static final int MESSAGE_WRITE = 3;
 	public static final int MESSAGE_DEVICE_NAME = 4;
 	public static final int MESSAGE_TOAST = 5;
+	public static final int CONNECTION_LOST = 6;
 
 	// Key names received from the BluetoothChatService Handler
 	public static final String DEVICE_NAME = "device_name";
@@ -100,7 +101,11 @@ public class BluetoothChat extends Activity {
 			// Only if the state is STATE_NONE, do we know that we haven't started already
 			if (mChatService.getState() == BluetoothChatService.STATE_NONE) {
 				// Start the Bluetooth chat services
-				mChatService.start();
+				if (!mChatService.start()) {
+					Toast.makeText(getApplicationContext(), "Unable to establish connection. Please try again.", Toast.LENGTH_SHORT).show();
+					Intent i = new Intent(BluetoothChat.this, SingleMultiChoiceActivity.class);
+					startActivity(i);
+				}
 			}
 		}
 	}
@@ -110,7 +115,7 @@ public class BluetoothChat extends Activity {
 
 		// Initialize the BluetoothChatService to perform bluetooth connections
 		mChatService = new BluetoothChatService(this, mHandler);
-		AppVariables.mChatService = mChatService;
+		MyApplication.mChatService = mChatService;
 
 		// Initialize the buffer for outgoing messages
 		mOutStringBuffer = new StringBuffer("");
@@ -205,7 +210,7 @@ public class BluetoothChat extends Activity {
 				byte[] readBuf = (byte[]) msg.obj;
 				// construct a string from the valid bytes in the buffer
 				String readMessage = new String(readBuf, 0, msg.arg1);
-				AppVariables.inComingMessage = readMessage;
+				MyApplication.inComingMessage = readMessage;
 				// send a broadcast that a message has been received
 				Intent intent = new Intent();
 				intent.setAction("com.example.rockpaperscissor.BTMSG_INTENT");
@@ -218,6 +223,11 @@ public class BluetoothChat extends Activity {
 				break;
 			case MESSAGE_TOAST:
 				Toast.makeText(getApplicationContext(), msg.getData().getString(TOAST), Toast.LENGTH_SHORT).show();
+				break;
+			case CONNECTION_LOST:
+				Toast.makeText(getApplicationContext(), msg.getData().getString(TOAST), Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(BluetoothChat.this, SingleMultiChoiceActivity.class);
+				startActivity(i);
 				break;
 			}
 		}
@@ -248,7 +258,9 @@ public class BluetoothChat extends Activity {
 				// User did not enable Bluetooth or an error occured
 				Log.d(TAG, "BT not enabled");
 				Toast.makeText(this, R.string.bt_not_enabled_leaving, Toast.LENGTH_SHORT).show();
-				finish();
+
+				Intent i = new Intent(BluetoothChat.this, SingleMultiChoiceActivity.class);
+				startActivity(i);
 			}
 		}
 	}
@@ -270,22 +282,4 @@ public class BluetoothChat extends Activity {
 			startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
 		}
 	}
-
-	// @Override
-	// public boolean onOptionsItemSelected(MenuItem item) {
-	// Intent serverIntent = null;
-	// switch (item.getItemId()) {
-	// case R.id.secure_connect_scan:
-	// // Launch the DeviceListActivity to see devices and do scan
-	// serverIntent = new Intent(this, DeviceListActivity.class);
-	// startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
-	// return true;
-	// case R.id.insecure_connect_scan:
-	// // Launch the DeviceListActivity to see devices and do scan
-	// serverIntent = new Intent(this, DeviceListActivity.class);
-	// startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
-	// return true;
-	// }
-	// return false;
-	// }
 }

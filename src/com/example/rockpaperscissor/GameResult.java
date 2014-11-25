@@ -27,13 +27,13 @@ public class GameResult extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_fourth);
 
-		AppVariables.gameResult = this;
+		MyApplication.gameResult = this;
 
 		winner = (TextView) findViewById(R.id.winnerName_Text);
 		records = (Button) findViewById(R.id.record_Button);
 
 		TextView player2Header = (TextView) findViewById(R.id.comp_selected);
-		if (AppVariables.isSinglePlayer) {
+		if (MyApplication.isSinglePlayer) {
 			player2Header.setText(R.string.cpu_selected_text);
 		} else
 			player2Header.setText(R.string.friend_selected_text);
@@ -41,7 +41,7 @@ public class GameResult extends ActionBarActivity {
 		cpu_select = (TextView) findViewById(R.id.cpu_selection_text);
 
 		getPlayerChoice();
-		if (AppVariables.isSinglePlayer == true) {
+		if (MyApplication.isSinglePlayer == true) {
 			decideSinglePlayerWinner();
 		} else {
 			Button records = (Button) findViewById(R.id.record_Button);
@@ -53,12 +53,12 @@ public class GameResult extends ActionBarActivity {
 
 
 	public void decideMultiPlayerWinner() {
-		if (AppVariables.inComingMessage != null) {
-			String player2Choice = decodePlayerChoice(AppVariables.inComingMessage);
+		if (MyApplication.inComingMessage != null) {
+			String player2Choice = decodePlayerChoice(MyApplication.inComingMessage);
 			codeToWord(Integer.parseInt(player2Choice));
 			computeWinner(player_choice_number, player2Choice);
 			records.setEnabled(true);
-			AppVariables.inComingMessage = null;
+			MyApplication.inComingMessage = null;
 		}
 	}
 
@@ -121,7 +121,7 @@ public class GameResult extends ActionBarActivity {
 
 	private void computeWinner(String player_choice_number, String cpu_choice) {
 
-		String player2 = AppVariables.isSinglePlayer ? "Computer" : "Your Friend";
+		String player2 = MyApplication.isSinglePlayer ? "Computer" : "Your Friend";
 
 		if (player_choice_number.equals("1") && cpu_choice.equals("2")) {
 			winner.setText(player2);
@@ -165,7 +165,7 @@ public class GameResult extends ActionBarActivity {
 
 	public void nextActivity(View v) {
 
-		Intent i = new Intent(GameResult.this, PlayerStatestics.class);
+		Intent i = new Intent(GameResult.this, PlayerStatistics.class);
 		startActivity(i);
 	}
 

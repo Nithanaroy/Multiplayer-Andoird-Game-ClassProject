@@ -28,40 +28,23 @@ public class PlayerChoiceDisplay extends ActionBarActivity {
 		} else if (playerChoiceS3.equals("scissors") || playerChoiceS3.equals("Scissors") || playerChoiceS3.equals("ceasers") || playerChoiceS3.equals("seether") || playerChoiceS3.equals("scissor")) {
 			choice.setText("Scissors!");
 		}
-
-		if (!AppVariables.isSinglePlayer) {
-			sendChoiceToOtherPlayer(playerChoiceS3);
-		}
 	}
 
 	private void sendChoiceToOtherPlayer(String choice) {
 		byte[] send = choice.getBytes();
-		AppVariables.mChatService.write(send);
+		MyApplication.mChatService.write(send);
 	}
 
-
-	public void goToFourthActivity(View v) {
-
-		Intent i = new Intent(PlayerChoiceDisplay.this, GameResult.class);
+	public void goToSecondActivity(View v) {
+		Intent i = new Intent(PlayerChoiceDisplay.this, PlayerChoice.class);
 		startActivity(i);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.third, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+	public void goToFourthActivity(View v) {
+		if (!MyApplication.isSinglePlayer) {
+			sendChoiceToOtherPlayer(playerChoiceS3);
 		}
-		return super.onOptionsItemSelected(item);
+		Intent i = new Intent(PlayerChoiceDisplay.this, GameResult.class);
+		startActivity(i);
 	}
 }
