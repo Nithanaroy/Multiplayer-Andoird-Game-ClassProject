@@ -6,9 +6,9 @@
     <string name="action_settings">Settings</string>
     <string name="welcomeTextS1">Welcome! Login to play!!</string>
     <string name="nameTextScreen1">Name</string>
-    <string name="nameBoxS1">Nitin</string>
+    <string name="nameBoxS1"></string>
     <string name="ageTextS1">Age</string>
-    <string name="ageBoxS1">20</string>
+    <string name="ageBoxS1"></string>
     <string name="sexTextS1">Sex</string>
     <string name="male_text_RB">Male</string>
     <string name="female_text_RB">Female</string>

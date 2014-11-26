@@ -226,8 +226,12 @@ public class BluetoothChat extends Activity {
 				break;
 			case CONNECTION_LOST:
 				Toast.makeText(getApplicationContext(), msg.getData().getString(TOAST), Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(BluetoothChat.this, SingleMultiChoiceActivity.class);
-				startActivity(i);
+				
+				// If playing with a friend, disconnect and go back to game selection screen
+				if (!MyApplication.isSinglePlayer) {
+					Intent i = new Intent(BluetoothChat.this, SingleMultiChoiceActivity.class);
+					startActivity(i);	
+				}
 				break;
 			}
 		}
